@@ -133,7 +133,7 @@ bool VibratopluginAudioProcessor::isBusesLayoutSupported (const BusesLayout& lay
 }
 #endif
 
-void VibratopluginAudioProcessor:: (AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
+void VibratopluginAudioProcessor:: processBlock(AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
 {
     ScopedNoDenormals noDenormals;
     auto totalNumInputChannels  = getTotalNumInputChannels();
