@@ -32,7 +32,7 @@ VibratopluginAudioProcessorEditor::VibratopluginAudioProcessorEditor (Vibratoplu
     
     //Mod Freq
     addAndMakeVisible(modFreqSlider);
-    // Nyquist rate
+    //LFO 5 - 14 Hz
     modFreqSlider.setRange(0.0, 14);
     modFreqSlider.setTextValueSuffix(" Hz");
     modFreqSlider.addListener(this);
