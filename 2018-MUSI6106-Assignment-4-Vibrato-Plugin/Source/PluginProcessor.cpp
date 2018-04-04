@@ -22,7 +22,8 @@ VibratopluginAudioProcessor::VibratopluginAudioProcessor()
                   .withOutput ("Output", AudioChannelSet::stereo(), true)
 #endif
                   ),
-treeState(*this, nullptr)
+treeState(*this, nullptr),
+parameters(*this, nullptr)
 #endif
 {
     CVibrato::createInstance(m_pCVibrato);
@@ -30,6 +31,8 @@ treeState(*this, nullptr)
     treeState.createAndAddParameter(MOD_WIDTH_ID, MOD_WIDTH_NAME, MOD_WIDTH_NAME, widthRange, m_fInitialModWidthValue, nullptr, nullptr);
     NormalisableRange<float> freqRange(0.0f, 25.0f);
     treeState.createAndAddParameter(MOD_FREQ_ID, MOD_FREQ_NAME, MOD_FREQ_NAME, freqRange, m_fInitialModFreqValue, nullptr, nullptr);
+    
+    parameters.state = ValueTree("savedParams");
 }
 
 VibratopluginAudioProcessor::~VibratopluginAudioProcessor()
@@ -190,12 +193,23 @@ void VibratopluginAudioProcessor::getStateInformation (MemoryBlock& destData)
     // You should use this method to store your parameters in the memory block.
     // You could do that either as raw data, or use the XML or ValueTree classes
     // as intermediaries to make it easy to save and load complex data.
+    
+    ScopedPointer<XmlElement> xml (parameters.state.createXml());
+    copyXmlToBinary(*xml, destData);
 }
 
 void VibratopluginAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
     // You should use this method to restore your parameters from this memory block,
     // whose contents will have been created by the getStateInformation() call.
+    
+    ScopedPointer<XmlElement> theParams (getXmlFromBinary(data, sizeInBytes));
+    
+    if (theParams != nullptr) {
+        if (theParams -> hasTagName(parameters.state.getType())) {
+            parameters.state = ValueTree::fromXml(*theParams);
+        }
+    }
 }
 
 //==============================================================================
