@@ -1,0 +1,37 @@
+dependencies: \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/src/Tests/Tests/Test_Vibrato.cpp \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/build/inc/MUSI6106Config.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/UnitTest++.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/UnitTestPP.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/Config.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/TestMacros.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/TestSuite.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/ExceptionMacros.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/ExecuteTest.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/TestDetails.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/HelperMacros.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/TestResults.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/MemoryOutStream.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/AssertException.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/RequiredCheckException.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/CurrentTest.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/Posix/SignalTranslator.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/CheckMacros.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/Checks.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/ReportAssertImpl.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/RequireMacros.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/RequiredCheckTestReporter.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/ThrowingTestReporter.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/TestReporter.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/TestRunner.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/Test.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/TestList.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/TimeConstraint.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/TimeHelpers.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/Posix/TimeHelpers.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/3rdparty/unittest-cpp-master/UnitTest++/ReportAssert.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/src/inc/Synthesis.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/inc/ErrorDef.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/src/inc/Util.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/src/inc/Vector.h \
+  /Users/Yi/Desktop/2018-MUSI6106-exercise_2/src/inc/Vibrato.h
