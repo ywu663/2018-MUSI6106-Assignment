@@ -23,6 +23,7 @@ VibratopluginAudioProcessorEditor::VibratopluginAudioProcessorEditor (Vibratoplu
     addAndMakeVisible(modWidthSlider);
     //Mod Width 0.0 - 10.0 ms
     modWidthSlider.setRange(0.0f, 10.0f, 0.1);
+    modWidthSlider.setValue(0.7f);
     modWidthSlider.setTextValueSuffix(" ms");
     modWidthSlider.addListener(this);
     addAndMakeVisible(modFreqLabel);
@@ -35,6 +36,7 @@ VibratopluginAudioProcessorEditor::VibratopluginAudioProcessorEditor (Vibratoplu
     addAndMakeVisible(modFreqSlider);
     //LFO 0 - 25 Hz
     modFreqSlider.setRange(0.0f, 25.0f, 0.1);
+    modFreqSlider.setValue(10.0f);
     modFreqSlider.setTextValueSuffix(" Hz");
     modFreqSlider.addListener(this);
     addAndMakeVisible(modFreqLabel);
