@@ -63,6 +63,7 @@ public:
     
     void setVibratoParam (CVibrato::VibratoParam_t eParam, float fParamValue);
     void setBypass(bool bState);
+    bool getBypass();
     
     AudioProcessorValueTreeState treeState;
     

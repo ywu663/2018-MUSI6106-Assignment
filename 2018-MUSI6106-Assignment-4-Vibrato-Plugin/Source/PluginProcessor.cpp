@@ -171,9 +171,9 @@ void VibratopluginAudioProcessor:: processBlock(AudioBuffer<float>& buffer, Midi
         // ..do something to the data...
     }
     
-    if (m_bIfBypass == false){
-        m_pCVibrato->process((float **)buffer.getArrayOfReadPointers(), buffer.getArrayOfWritePointers(), buffer.getNumSamples());
-    }
+
+    m_pCVibrato->process((float **)buffer.getArrayOfReadPointers(), buffer.getArrayOfWritePointers(), buffer.getNumSamples());
+
 }
 
 //==============================================================================
@@ -230,3 +230,8 @@ void VibratopluginAudioProcessor::setBypass(bool bState)
     m_bIfBypass = bState;
 }
 
+
+bool VibratopluginAudioProcessor::getBypass()
+{
+    return m_bIfBypass;
+}

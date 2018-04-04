@@ -87,13 +87,16 @@ void VibratopluginAudioProcessorEditor::resized()
 
 void VibratopluginAudioProcessorEditor::sliderValueChanged(Slider* slider)
 {
-    if (slider == &modWidthSlider)
+    if (!processor.getBypass())
     {
-        processor.setVibratoParam(CVibrato::kParamModWidthInS, (float)slider->getValue()/1000);
-    }
-    else if (slider == &modFreqSlider)
-    {
-        processor.setVibratoParam(CVibrato::kParamModFreqInHz, (float)slider->getValue());
+        if (slider == &modWidthSlider)
+        {
+            processor.setVibratoParam(CVibrato::kParamModWidthInS, (float)slider->getValue()/1000);
+        }
+        else if (slider == &modFreqSlider)
+        {
+            processor.setVibratoParam(CVibrato::kParamModFreqInHz, (float)slider->getValue());
+        }
     }
 }
 
@@ -102,6 +105,16 @@ void VibratopluginAudioProcessorEditor::buttonClicked(Button* button)
     if (button == &byPassButton)
     {
         processor.setBypass(button->getToggleState());
+        if (processor.getBypass())
+        {
+            processor.setVibratoParam(CVibrato::kParamModWidthInS, 0);
+            processor.setVibratoParam(CVibrato::kParamModFreqInHz, 0);
+        }
+        else
+        {
+            processor.setVibratoParam(CVibrato::kParamModWidthInS, (float)modWidthSlider.getValue()/1000);
+            processor.setVibratoParam(CVibrato::kParamModFreqInHz, (float)modFreqSlider.getValue());
+        }
     }
 }
 
