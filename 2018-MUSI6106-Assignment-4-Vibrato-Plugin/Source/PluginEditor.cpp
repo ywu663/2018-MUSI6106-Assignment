@@ -21,8 +21,9 @@ VibratopluginAudioProcessorEditor::VibratopluginAudioProcessorEditor (Vibratoplu
     
     //Mod Width
     addAndMakeVisible(modWidthSlider);
-    modWidthSlider.setRange(0.0, 1.0);
-    modWidthSlider.setTextValueSuffix(" s");
+    //Mod Width 0.0 - 10.0 ms
+    modWidthSlider.setRange(0.0f, 10.0f, 0.1);
+    modWidthSlider.setTextValueSuffix(" ms");
     modWidthSlider.addListener(this);
     addAndMakeVisible(modFreqLabel);
     modWidthLabel.setText("Mod Width", dontSendNotification);
@@ -32,8 +33,8 @@ VibratopluginAudioProcessorEditor::VibratopluginAudioProcessorEditor (Vibratoplu
     
     //Mod Freq
     addAndMakeVisible(modFreqSlider);
-    //LFO 5 - 14 Hz
-    modFreqSlider.setRange(0.0, 14);
+    //LFO 0 - 25 Hz
+    modFreqSlider.setRange(0.0f, 25.0f, 0.1);
     modFreqSlider.setTextValueSuffix(" Hz");
     modFreqSlider.addListener(this);
     addAndMakeVisible(modFreqLabel);
@@ -80,7 +81,7 @@ void VibratopluginAudioProcessorEditor::sliderValueChanged(Slider* slider)
 {
     if (slider == &modWidthSlider)
     {
-        processor.setVibratoParam(CVibrato::kParamModWidthInS, (float)slider->getValue());
+        processor.setVibratoParam(CVibrato::kParamModWidthInS, (float)slider->getValue()/1000);
     }
     else if (slider == &modFreqSlider)
     {

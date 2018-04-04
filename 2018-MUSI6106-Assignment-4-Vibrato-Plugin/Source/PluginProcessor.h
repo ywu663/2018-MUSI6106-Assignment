@@ -63,7 +63,7 @@ public:
 private:
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (VibratopluginAudioProcessor)
-    
-    CVibrato *pCVibrato = NULL;
-    bool bIfBypass = false;
+    const float m_fmaxDelayInS = 1.0f;
+    CVibrato *m_pCVibrato = NULL;
+    bool m_bBypassState = false;
 };
