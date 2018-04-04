@@ -1,42 +1,44 @@
 /*
-  ==============================================================================
-
-    This file was auto-generated!
-
-    It contains the basic framework code for a JUCE plugin editor.
-
-  ==============================================================================
-*/
+ ==============================================================================
+ 
+ This file was auto-generated!
+ 
+ It contains the basic framework code for a JUCE plugin editor.
+ 
+ ==============================================================================
+ */
 
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
 
 //==============================================================================
 VibratopluginAudioProcessorEditor::VibratopluginAudioProcessorEditor (VibratopluginAudioProcessor& p)
-    : AudioProcessorEditor (&p), processor (p)
+: AudioProcessorEditor (&p), processor (p)
 {
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
     setSize (400, 300);
     
+    //Automation
+    sliderAttachWidth = new AudioProcessorValueTreeState::SliderAttachment(processor.treeState, MOD_WIDTH_ID, modWidthSlider);
+    sliderAttachFreq = new AudioProcessorValueTreeState::SliderAttachment(processor.treeState, MOD_FREQ_ID, modFreqSlider);
+    
     //Mod Width
     addAndMakeVisible(modWidthSlider);
     //Mod Width 0.0 - 10.0 ms
     modWidthSlider.setRange(0.0f, 10.0f, 0.1);
-    modWidthSlider.setValue(0.7f);
     modWidthSlider.setTextValueSuffix(" ms");
     modWidthSlider.addListener(this);
     addAndMakeVisible(modFreqLabel);
     modWidthLabel.setText("Mod Width", dontSendNotification);
     modWidthLabel.attachToComponent(&modWidthSlider, true);
-
+    
     
     
     //Mod Freq
     addAndMakeVisible(modFreqSlider);
     //LFO 0 - 25 Hz
     modFreqSlider.setRange(0.0f, 25.0f, 0.1);
-    modFreqSlider.setValue(10.0f);
     modFreqSlider.setTextValueSuffix(" Hz");
     modFreqSlider.addListener(this);
     addAndMakeVisible(modFreqLabel);
@@ -55,6 +57,10 @@ VibratopluginAudioProcessorEditor::VibratopluginAudioProcessorEditor (Vibratoplu
 
 VibratopluginAudioProcessorEditor::~VibratopluginAudioProcessorEditor()
 {
+    delete sliderAttachWidth;
+    sliderAttachWidth = NULL;
+    delete sliderAttachFreq;
+    sliderAttachFreq = NULL;
 }
 
 //==============================================================================
@@ -62,7 +68,7 @@ void VibratopluginAudioProcessorEditor::paint (Graphics& g)
 {
     // (Our component is opaque, so we must completely fill the background with a solid colour)
     g.fillAll (getLookAndFeel().findColour (ResizableWindow::backgroundColourId));
-
+    
     g.setColour (Colours::white);
     g.setFont (15.0f);
     //g.drawFittedText ("Hello World!", getLocalBounds(), Justification::centred, 1);
